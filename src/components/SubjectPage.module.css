@@ -160,3 +160,7 @@ h2 {
   font-size: 20px;
   margin-right: 1%;
 }
+.error {
+  align-items: center;
+  justify-content: center;
+}
