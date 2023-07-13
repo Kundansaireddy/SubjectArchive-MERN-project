@@ -10,10 +10,8 @@ const SubjectPage = () => {
 
   const subject = params.subject;
   const isFormValid = fileName.length !== 0 && fileLink.length !== 0;
-  useEffect(async () => {
-    setIsLoading(true);
-    await fetchData();
-    setIsLoading(false);
+  useEffect(() => {
+    fetchData();
   }, [fileData]);
   const fetchData = () => {
     fetch("https://getdata-api.onrender.com/api/data")
