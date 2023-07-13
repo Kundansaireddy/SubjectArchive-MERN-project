@@ -6,6 +6,7 @@ const NewAdmin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -20,9 +21,10 @@ const NewAdmin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setIsLoading(true);
     if (email === "" || password === "") {
       setErrorMessage("Please enter both email and password.");
+      setIsLoading(false);
       return;
     }
 
@@ -44,8 +46,8 @@ const NewAdmin = () => {
       );
 
       if (response.ok) {
+        setIsLoading(false);
         console.log("Email does not exist in the database");
-        // Proceed with adding the new user
         try {
           const addUserResponse = await fetch(
             "https://authenticate-api-9vg2.onrender.com/api/newuser",
@@ -59,21 +61,26 @@ const NewAdmin = () => {
           );
 
           if (addUserResponse.ok) {
+            setIsLoading(false);
             console.log("Data posted successfully");
             setEmail("");
             setPassword("");
             navigate("/admin");
           } else {
+            setIsLoading(false);
             console.log("Failed to post data");
           }
         } catch (error) {
+          setIsLoading(false);
           console.log("Error occurred while posting data:", error);
         }
       } else {
+        setIsLoading(false);
         console.log("Email already exists in the database");
         setErrorMessage("Email already exists.");
       }
     } catch (error) {
+      setIsLoading(false);
       console.log("Error occurred while checking data:", error);
     }
   };
@@ -101,6 +108,7 @@ const NewAdmin = () => {
           />
         </div>
         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+        {isLoading && <p className={styles.error}>Is Loading..</p>}
         <button type="submit" className={styles.addButton}>
           Add User
         </button>
