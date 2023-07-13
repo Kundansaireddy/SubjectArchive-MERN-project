@@ -4,6 +4,7 @@ import styles from "./SubjectPage.module.css";
 const SubjectPage = () => {
   const params = useParams();
   const [fileData, setFileData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const subject = params.subject;
   useEffect(() => {
     fetchData();
@@ -12,17 +13,20 @@ const SubjectPage = () => {
     fetch("https://getdata-api.onrender.com/api/data")
       .then((response) => response.json())
       .then((data) => {
+        setIsLoading(false);
         const filteredData = data
           .filter((item) => item.subject === subject)
           .map((item) => [item.name, item.link]);
         setFileData(filteredData);
       })
       .catch((error) => {
+        setIsLoading(false);
         console.log("Error fetching data:", error);
       });
   };
   return (
     <Fragment>
+      {isLoading && <p>Is Loading..</p>}
       {fileData.length === 0 && (
         <div className={styles.container}>
           <h1>No files uploaded</h1>
