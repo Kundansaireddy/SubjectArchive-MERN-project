@@ -10,11 +10,12 @@ const SubjectPage = () => {
 
   const subject = params.subject;
   const isFormValid = fileName.length !== 0 && fileLink.length !== 0;
-  useEffect(() => {
-    fetchData();
+  useEffect(async () => {
+    setIsLoading(true);
+    await fetchData();
+    setIsLoading(false);
   }, [fileData]);
   const fetchData = () => {
-    setIsLoading(true);
     fetch("https://getdata-api.onrender.com/api/data")
       .then((response) => response.json())
       .then((data) => {
@@ -112,7 +113,7 @@ const SubjectPage = () => {
             </button>
           </div>
         </div>
-        {isLoading && <p className={styles.error}>Is Loading..</p>}
+        {isLoading && <h1 className={styles.error}>Is Loading..</h1>}
         {fileData.map((item) => (
           <div className={styles.subjectCard}>
             {" "}
