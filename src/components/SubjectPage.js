@@ -26,7 +26,7 @@ const SubjectPage = () => {
   };
   return (
     <Fragment>
-      {isLoading && <p className={styles.error}>Is Loading..</p>}
+      {isLoading && <h1 className={styles.container}>Is Loading..</h1>}
       {!isLoading && fileData.length === 0 && (
         <div className={styles.container}>
           <h1>No files uploaded</h1>
