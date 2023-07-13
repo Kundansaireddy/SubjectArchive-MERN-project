@@ -24,7 +24,7 @@ const LoginForm = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://authenticate-api-9vg2.onrender.com/api/checkUser",
+        "https://calm-erin-dove-sock.cyclic.app/api/checkUser",
         {
           method: "POST",
           headers: {
