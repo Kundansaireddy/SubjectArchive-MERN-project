@@ -6,6 +6,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -20,7 +21,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://authenticate-api-9vg2.onrender.com/api/checkUser",
@@ -33,12 +34,15 @@ const LoginForm = () => {
         }
       );
       if (response.ok) {
+        setIsLoading(false);
         console.log("Data matches in the database");
         navigate("/auth");
       } else {
+        setIsLoading(false);
         setErrorMessage("Username-Password doesnot Exist");
       }
     } catch (error) {
+      setIsLoading(false);
       console.log("Error occurred while checking data:", error);
     }
   };
@@ -77,6 +81,7 @@ const LoginForm = () => {
           />
         </div>
         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+        {isLoading && <p className={styles.error}>Is Loading..</p>}
         <div className={styles.buttonContainer}>
           <button onClick={newUserHandler} className={styles.newAccountButton}>
             Create New Admin
