@@ -56,7 +56,6 @@ const SubjectPage = () => {
       name: name,
       link: link,
     };
-    setIsLoading(true);
     fetch(`https://getdata-api.onrender.com/api/${subject}/delete`, {
       method: "DELETE",
       headers: {
