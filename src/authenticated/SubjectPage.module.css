@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.subjectCard {
+  width: 80%;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.subjectCard:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+}
+
+.inputField {
+  width: 40%;
+  flex: 1;
+  padding: 8px;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.fileUpload {
+  flex: 1;
+  padding: 8px;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.submitButton {
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid black;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitButton:hover {
+  background-color: #e6e6e6;
+}
+
+.deleteButton {
+  display: flex;
+  top: 4px;
+  right: 4px;
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid black;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: red;
+  color: white;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.subjectCard {
+  margin-top: 10px;
+  position: relative;
+  width: 80%;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subjectCard:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.deleteButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: red;
+  color: white;
+}
+.loginButton {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(137, 44, 38);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgb(137, 44, 38);
+}
+.loginButton:hover {
+  padding: 10px;
+  background-color: white;
+  color: blue;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+}

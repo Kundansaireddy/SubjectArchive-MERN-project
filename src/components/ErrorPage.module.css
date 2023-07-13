@@ -1,0 +1,15 @@
+.container {
+  width: 30%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid rgb(62, 84, 46);
+  border-radius: 10px;
+  background-color: rgb(241, 247, 236);
+  text-align: center;
+}
+
+h1 {
+  color: rgb(62, 84, 46);
+  font-size: 24px;
+  font-weight: bold;
+}

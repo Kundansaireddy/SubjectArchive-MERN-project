@@ -1,0 +1,82 @@
+.container {
+  width: 30%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid rgb(62, 84, 46);
+  border-radius: 10px;
+  background-color: rgb(241, 247, 236);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(62, 84, 46);
+}
+
+form {
+  margin-top: 20px;
+}
+
+.formGroup {
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  width: 20%;
+  font-weight: bold;
+  color: rgb(62, 84, 46);
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid rgb(153, 109, 42);
+  border-radius: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signInButton {
+  margin-top: 5%;
+  padding: 10px 20px;
+  background-color: rgb(137, 44, 38);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.signInButton:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.newAccountButton {
+  margin-top: 5%;
+  margin-left: 40%;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: rgb(137, 44, 38);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.newAccountButton:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+}

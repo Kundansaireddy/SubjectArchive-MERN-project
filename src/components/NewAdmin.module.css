@@ -1,0 +1,61 @@
+.container {
+  width: 30%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid rgb(62, 84, 46);
+  border-radius: 10px;
+  background-color: rgb(241, 247, 236);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(62, 84, 46);
+}
+
+form {
+  margin-top: 20px;
+}
+
+.formGroup {
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+label {
+  flex: 0 0 20%;
+  font-weight: bold;
+  color: rgb(62, 84, 46);
+  text-align: left;
+}
+
+.input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid rgb(153, 109, 42);
+  border-radius: 5px;
+}
+
+.addButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addButton {
+  margin-top: 3%;
+  margin-left: 70%;
+  padding: 10px 20px;
+  background-color: rgb(137, 44, 38);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-style: bold;
+}

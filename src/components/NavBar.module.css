@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(62, 84, 46);
+  padding: 10px;
+  border-bottom: 5px solid rgb(153, 109, 42);
+}
+
+.navbarLeft {
+  color: white;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.navbarRight {
+  align-items: right;
+}
+
+.loginButton {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(137, 44, 38);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.loginButton:hover {
+  padding: 10px;
+  background-color: white;
+  color: blue;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(62, 84, 46);
+  color: white;
+  border-top: 5px solid rgb(153, 109, 42);
+  font-size: xx-small;
+}
+.footerData {
+  text-align: right;
+  margin-right: 2.5%;
+}
+.loginButton_active {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(153, 109, 42);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+}
