@@ -11,13 +11,14 @@ const SubjectPage = () => {
   const subject = params.subject;
   const isFormValid = fileName.length !== 0 && fileLink.length !== 0;
   useEffect(() => {
-    setIsLoading(true);
     fetchData();
   }, [fileData]);
   const fetchData = () => {
+    setIsLoading(true);
     fetch("https://getdata-api.onrender.com/api/data")
       .then((response) => response.json())
       .then((data) => {
+        setIsLoading(false);
         const filteredData = data
           .filter((item) => item.subject === subject)
           .map((item) => [item.name, item.link]);
