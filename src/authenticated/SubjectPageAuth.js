@@ -22,13 +22,13 @@ const SubjectPage = () => {
         const filteredData = data
           .filter((item) => item.subject === subject)
           .map((item) => [item.name, item.link]);
-        setIsLoading(false);
         setFileData(filteredData);
       })
       .catch((error) => {
         setIsLoading(false);
         console.log("Error fetching data:", error);
       });
+    setIsLoading(false);
   };
 
   const addDataHandler = (event) => {
