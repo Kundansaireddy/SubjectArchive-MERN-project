@@ -35,7 +35,7 @@ const NewAdmin = () => {
 
     try {
       const response = await fetch(
-        "https://authenticate-api-9vg2.onrender.com/api/ifAlready",
+        "https://calm-erin-dove-sock.cyclic.app/api/ifAlready",
         {
           method: "POST",
           headers: {
@@ -50,7 +50,7 @@ const NewAdmin = () => {
         console.log("Email does not exist in the database");
         try {
           const addUserResponse = await fetch(
-            "https://authenticate-api-9vg2.onrender.com/api/newuser",
+            "https://calm-erin-dove-sock.cyclic.app/api/newuser",
             {
               method: "POST",
               headers: {
