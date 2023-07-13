@@ -6,10 +6,12 @@ const SubjectPage = () => {
   const [fileName, setFileName] = useState("");
   const [fileLink, setLink] = useState("");
   const [fileData, setFileData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const subject = params.subject;
   const isFormValid = fileName.length !== 0 && fileLink.length !== 0;
   useEffect(() => {
+    setIsLoading(true);
     fetchData();
   }, [fileData]);
   const fetchData = () => {
@@ -19,15 +21,17 @@ const SubjectPage = () => {
         const filteredData = data
           .filter((item) => item.subject === subject)
           .map((item) => [item.name, item.link]);
-
+        setIsLoading(false);
         setFileData(filteredData);
       })
       .catch((error) => {
+        setIsLoading(false);
         console.log("Error fetching data:", error);
       });
   };
 
   const addDataHandler = (event) => {
+    setIsLoading(true);
     event.preventDefault();
     let databody = {
       name: fileName,
@@ -45,13 +49,14 @@ const SubjectPage = () => {
     }).catch((error) => {
       console.log("error occured");
     });
+    setIsLoading(false);
   };
   const deleteHandler = (name, link) => {
     const databody = {
       name: name,
       link: link,
     };
-
+    setIsLoading(true);
     fetch(`https://getdata-api.onrender.com/api/${subject}/delete`, {
       method: "DELETE",
       headers: {
@@ -60,6 +65,7 @@ const SubjectPage = () => {
       body: JSON.stringify(databody),
     })
       .then((response) => {
+        setIsLoading(false);
         if (response.ok) {
           console.log("Data deleted successfully");
           const updatedFileData = fileData.filter(
@@ -71,6 +77,7 @@ const SubjectPage = () => {
         }
       })
       .catch((error) => {
+        setIsLoading(false);
         console.log("Error occurred while deleting data:", error);
       });
   };
@@ -104,6 +111,7 @@ const SubjectPage = () => {
             </button>
           </div>
         </div>
+        {isLoading && <p className={styles.error}>Is Loading..</p>}
         {fileData.map((item) => (
           <div className={styles.subjectCard}>
             {" "}
