@@ -99,7 +99,7 @@ const SubjectPage = () => {
               onChange={(event) => setLink(event.target.value)}
               type="text"
               className={styles.inputField}
-              placeholder="Enter Google Drive Link"
+              placeholder="Enter Link"
             />
             <button
               onClick={addDataHandler}
